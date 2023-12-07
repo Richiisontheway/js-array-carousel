@@ -49,23 +49,26 @@ for (let i = 0; i < listImg.length; i++) {
 
 let backed = document.getElementById('indietro');
 
+
 backed.addEventListener('click',
 
     function () {
-        
+        console.log(counter);
 
+        if (counter==listImg.length - 1){
 
+            counter++
+            
+            document.querySelector(slide).append(listImg[counter])
 
-
+        }
     }
-
-
-
 
 )
 
-
 // EVENTO COL CLICK AVANTI
+
+let counter = 0
 
 let forewared = document.getElementById('avanti');
 
@@ -73,21 +76,16 @@ forewared.addEventListener('click',
 
     function () {
         
-        if (posizioneClick < listImg.length -1){
+        console.log(counter);
 
-            ++posizioneClick;
+        if (counter < listImg.length - 1){
 
-        } else {
-
-            posizioneClick = 0;
+            counter++
+            
+            document.querySelector('slide').append(listImg[counter])
 
         }
 
-        
-
     }
-
-
-
 
 )
