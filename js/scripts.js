@@ -45,4 +45,49 @@ for (let i = 0; i < listImg.length; i++) {
 
 };
 
-// EVENTO COL CLICK
+// EVENTO COL CLICK INDIETRO
+
+let backed = document.getElementById('indietro');
+
+backed.addEventListener('click',
+
+    function () {
+        
+
+
+
+
+    }
+
+
+
+
+)
+
+
+// EVENTO COL CLICK AVANTI
+
+let forewared = document.getElementById('avanti');
+
+forewared.addEventListener('click',
+
+    function () {
+        
+        if (posizioneClick < listImg.length -1){
+
+            ++posizioneClick;
+
+        } else {
+
+            posizioneClick = 0;
+
+        }
+
+        
+
+    }
+
+
+
+
+)
