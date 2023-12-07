@@ -11,3 +11,16 @@
 /* 
     GENERAL
 */
+
+img{
+    width: 100%;
+}
+/*
+    MAIN
+*/
+.container{
+    height: 100vh;
+}
+.container-img{
+    width: 500px;
+}
