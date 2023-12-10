@@ -14,26 +14,30 @@ const listImg = [
 
 console.log('immagini',listImg,typeof listImg);
 
+
+
+
 //CICLO FOR PER FAR CICLARE LE IMMAGINI
 
 for (let i = 0; i < listImg.length; i++) {
 
     //CREO GLI ELEMENTI PRINCIPALI
-
-    const slide = document.createElement('div');
-
+    
+    let slide = document.createElement('div');
+    
     const img = document.createElement('img');
-
-    // AGGIUNGO UNA CLASSE
-
+    
+    // AGGIUNGO UNA CLASSE  
+    
     slide.classList.add('slide');
-
+    
+    slide.id = `helo-${[i]}`; 
+    
     if(i != 0){
-
+    
         slide.classList.add('d-none');
-
+    
     }
-
 
     // FACCIO GLI APPEND
 
@@ -43,49 +47,42 @@ for (let i = 0; i < listImg.length; i++) {
 
     document.getElementById('container').appendChild(slide);
 
+    // EVENTO COL CLICK AVANTI
+    
+    let counter = 0;
+    
+    let nextButton = document.getElementById('avanti');
+    
+    nextButton.addEventListener('click',
+    
+        function(){
+            
+            let currentCounter = 'helo-' + counter;
+
+            let items = document.getElementById(currentCounter);
+
+            console.log('items',items,typeof items);
+
+            slide.classList.add('d-none');
+    
+            counter++
+
+            console.log('counter', counter , typeof counter);
+
+            let nextCounter = 'helo-' + counter;
+
+            console.log('items+1',nextCounter, typeof nextCounter);
+
+            items = document.getElementById(nextCounter);
+
+            slide.classList.remove('d-none');
+            
+        }
+    
+    )
 };
+
 
 // EVENTO COL CLICK INDIETRO
 
-let backed = document.getElementById('indietro');
-
-
-backed.addEventListener('click',
-
-    function () {
-        console.log(counter);
-
-        if (counter==listImg.length - 1){
-
-            counter++
-            
-            document.querySelector(slide).append(listImg[counter])
-
-        }
-    }
-
-)
-
-// EVENTO COL CLICK AVANTI
-
-let counter = 0
-
-let forewared = document.getElementById('avanti');
-
-forewared.addEventListener('click',
-
-    function () {
-        
-        console.log(counter);
-
-        if (counter < listImg.length - 1){
-
-            counter++
-            
-            document.querySelector('slide').append(listImg[counter])
-
-        }
-
-    }
-
-)
+let backButton = document.getElementById('indietro');
