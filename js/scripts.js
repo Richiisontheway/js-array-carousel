@@ -32,6 +32,7 @@ for (let i = 0; i < listImg.length; i++) {
     slide.classList.add('slide');
     
     slide.id = `helo-${[i]}`; 
+
     
     if(i != 0){
     
@@ -47,42 +48,37 @@ for (let i = 0; i < listImg.length; i++) {
 
     document.getElementById('container').appendChild(slide);
 
-    // EVENTO COL CLICK AVANTI
-    
-    let counter = 0;
-    
-    let nextButton = document.getElementById('avanti');
-    
-    nextButton.addEventListener('click',
-    
-        function(){
-            
-            let currentCounter = 'helo-' + counter;
-
-            let items = document.getElementById(currentCounter);
-
-            console.log('items',items,typeof items);
-
-            slide.classList.add('d-none');
-    
-            counter++
-
-            console.log('counter', counter , typeof counter);
-
-            let nextCounter = 'helo-' + counter;
-
-            console.log('items+1',nextCounter, typeof nextCounter);
-
-            items = document.getElementById(nextCounter);
-
-            slide.classList.remove('d-none');
-            
-        }
-    
-    )
 };
+// EVENTO COL CLICK AVANTI
 
+let counter = 0;
 
-// EVENTO COL CLICK INDIETRO
+let nextButton = document.getElementById('avanti');
 
-let backButton = document.getElementById('indietro');
+nextButton.addEventListener('click',
+
+    function(){
+        
+        let currentCounter = 'helo-' + counter;
+
+        let item = document.getElementById(currentCounter);
+
+        console.log('item',item,typeof item);
+
+        item.classList.add('d-none');
+
+        counter++
+
+        console.log('counter', counter , typeof counter);
+
+        let nextCounter = 'helo-' + counter;
+
+        console.log('items+1',nextCounter, typeof nextCounter);
+
+        item = document.getElementById(nextCounter);
+
+        item.classList.remove('d-none');
+        
+    }
+
+)
