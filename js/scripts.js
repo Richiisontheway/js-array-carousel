@@ -47,8 +47,42 @@ for (let i = 0; i < listImg.length; i++) {
     slide.appendChild(img);
 
     document.getElementById('container').appendChild(slide);
-
+    
 };
+
+// AUTO PLAY IN AVANTI
+
+setInterval(autoplay,30);
+
+function autoplay(){
+
+        let currentCounter = 'helo-' + counter;
+
+        let item = document.getElementById(currentCounter);
+
+        console.log('item',item,typeof item);
+
+        item.classList.add('d-none');
+
+        counter++
+        if(counter == 5){
+
+            counter = 0
+
+        }
+
+        console.log('counter', counter , typeof counter);
+
+        let nextCounter = 'helo-' + counter;
+
+        console.log('items+1',nextCounter, typeof nextCounter);
+
+        item = document.getElementById(nextCounter);
+
+        item.classList.remove('d-none');
+        
+}
+
 // EVENTO COL CLICK AVANTI
 
 let counter = 0;
@@ -56,6 +90,43 @@ let counter = 0;
 let nextButton = document.getElementById('avanti');
 
 nextButton.addEventListener('click',
+
+    function (){
+        
+        let currentCounter = 'helo-' + counter;
+
+        let item = document.getElementById(currentCounter);
+
+        console.log('item',item,typeof item);
+
+        item.classList.add('d-none');
+
+        counter++
+        if(counter == 5){
+
+            counter = 0
+
+        }
+
+        console.log('counter', counter , typeof counter);
+
+        let nextCounter = 'helo-' + counter;
+
+        console.log('items+1',nextCounter, typeof nextCounter);
+
+        item = document.getElementById(nextCounter);
+
+        item.classList.remove('d-none');
+        
+    }
+
+)
+
+// EVENTO CLICK INDIETRO
+
+let backButton = document.getElementById('indietro');
+
+backButton.addEventListener('click',
 
     function(){
         
@@ -67,7 +138,12 @@ nextButton.addEventListener('click',
 
         item.classList.add('d-none');
 
-        counter++
+        counter--
+        if(counter == -1){
+
+            counter = 4
+
+        }
 
         console.log('counter', counter , typeof counter);
 
