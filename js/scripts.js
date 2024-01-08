@@ -52,7 +52,7 @@ for (let i = 0; i < listImg.length; i++) {
 
 // AUTO PLAY IN AVANTI
 
-setInterval(autoplay,30);
+setInterval(autoplay,3000);
 
 function autoplay(){
 
@@ -70,7 +70,6 @@ function autoplay(){
             counter = 0
 
         }
-
         console.log('counter', counter , typeof counter);
 
         let nextCounter = 'helo-' + counter;
@@ -100,7 +99,7 @@ nextButton.addEventListener('click',
         console.log('item',item,typeof item);
 
         item.classList.add('d-none');
-
+        
         counter++
         if(counter == 5){
 
